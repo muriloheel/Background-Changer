@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background </title>
+    <link rel="icon" href="http://example.com/favicon.png">
+
+    <style>
+       
+        body{
+          justify-content: center;
+          align-content: center;
+          background: linear-gradient(to right,black,gray);
+        }
+        #span{
+          display: flex;
+          justify-content: center;
+          align-content: center;
+        }
+      #div{
+        display: flex; 
+        background-color: black;
+        width: 20vw;
+        height: 15vh;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+      }
+       #background{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(3,100px);
+            grid-template-rows: repeat(1,100px);
+        }
+        .button{
+            width: 15vw;
+            height: 12vh;
+            background: linear-gradient(to left,black,blue);
+            font-family: MV Boli, sans-serif;
+            font-size: 23px;
+            text-align:center;
+            font-weight: 1000;
+            color: cornsilk;
+            cursor: pointer;
+        }     
+        .button:hover{
+            background: linear-gradient(to left,black,hsl(200,100%,50%));
+            text-shadow: 0px 0px 5px yellow ;
+            box-shadow: 3px 3px 5px #666666 ;
+        }
+        .box{
+            width: 80vw;
+            height: 80vh;
+            border: 7px solid black;            
+            font-size: 4vh;
+            text-align: center;
+            font-family: Ink Free;
+            font-weight: 800;
+            color: #000000;
+        }
+        #b1{background-color: cornsilk;}
+        #b2{background-color: cornsilk;}
+        #b3{background-color: cornsilk;}
+    </style>
+</head>
+
+<body>
+<div id="background">
+  <div class="box" id="b1">fundo: #CCC, borda: #000000</div>
+  <div class="box" id="b2">fundo: #CCC, borda: #000000</div> 
+  <div class="box" id="b3">fundo: #CCC, borda: #000000</div>
+</div>
+
+<span id="span">
+  <div id="div">
+    <button class="button">Mudar Cor</button>
+  </div>
+</span>
+
+<script defer>
+ //all hexadecimal characters:
+ //0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+ let chars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,"A","B","C","D","E","F"];
+
+ const button = document.querySelector('button');
+ 
+ button.onclick = function(){
+    const b1 = document.querySelector('#b1');
+    const b2 = document.querySelector('#b2');
+    const b3 = document.querySelector('#b3');
+
+    let a = Math.floor(Math.random()*16);
+    let z = Math.floor(Math.random()*16);
+    let c = Math.floor(Math.random()*16);
+    let d = Math.floor(Math.random()*16);
+    let e = Math.floor(Math.random()*16);
+    let f = Math.floor(Math.random()*16);
+    
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let i = Math.floor(Math.random()*255);
+
+    b1.style.backgroundColor = "#"+ chars[a] +""+ chars[z] +""+ chars[c]+ 
+ ""+ chars[d]+""+ chars[e]+""+ chars[f];
+
+    b1.style.borderColor = "rgb("+ r +","+  g+","+ i +")";
+    b1.style.color = "rgb("+ r +","+  g+","+ i +")";
+
+    b1.innerText = "\n"+ "\n"+ "fundo:\n #"+ chars[a] +""+ chars[z] +""+ chars[c]+ 
+ ""+ chars[d]+""+ chars[e]+""+ chars[f] + "\nborda: \nrgb("+ r +","+  g+","+ i +")";
+    
+    b1.style["box-shadow"] = "20px 20px 40px "+ "rgb("+ r +","+  g+","+ i +")";
+    b1.style["text-shadow"] = "20px 20px 40px "+ "rgb("+ r +","+  g+","+ i +")";
+
+    let a1 = Math.floor(Math.random()*16);
+    let z1 = Math.floor(Math.random()*16);
+    let c1 = Math.floor(Math.random()*16);
+    let d1 = Math.floor(Math.random()*16);
+    let e1 = Math.floor(Math.random()*16);
+    let f1 = Math.floor(Math.random()*16);
+    
+    let r1 = Math.floor(Math.random()*255);
+    let g1 = Math.floor(Math.random()*255);
+    let i1 = Math.floor(Math.random()*255);
+
+    b2.style.backgroundColor = "#"+ chars[a1] +""+ chars[z1] +""+ chars[c1]+ 
+ ""+ chars[d1]+""+ chars[e1]+""+ chars[f1];
+
+    b2.style.borderColor = "rgb("+ r1 +","+  g1+","+ i1 +")";
+    b2.style.color = "rgb("+ r1 +","+  g1+","+ i1 +")";
+
+    b2.innerText = "\n"+ "\n"+ "fundo:\n #"+ chars[a1] +""+ chars[z1] +""+ chars[c1]+ 
+ ""+ chars[d1]+""+ chars[e1]+""+ chars[f1] + "\nborda: \nrgb("+ r1 +","+  g1+","+ i1 +")";
+
+    b2.style["box-shadow"] = "20px 20px 40px "+ "rgb("+ r1 +","+  g1+","+ i1 +")";
+    b2.style["text-shadow"] = "20px 20px 40px "+ "rgb("+ r1 +","+  g1+","+ i1 +")";
+
+    let a2 = Math.floor(Math.random()*16);
+    let z2 = Math.floor(Math.random()*16);
+    let c2 = Math.floor(Math.random()*16);
+    let d2 = Math.floor(Math.random()*16);
+    let e2 = Math.floor(Math.random()*16);
+    let f2 = Math.floor(Math.random()*16);
+
+    let r2 = Math.floor(Math.random()*255);
+    let g2 = Math.floor(Math.random()*255);
+    let i2 = Math.floor(Math.random()*255);
+
+    b3.style.backgroundColor = "#"+ chars[a2] +""+ chars[z2] +""+ chars[c2]+ 
+ ""+ chars[d2]+""+ chars[e2]+""+ chars[f2];
+
+    b3.style.borderColor = "rgb("+ r2 +","+  g2+","+ i2 +")";
+    b3.style.color = "rgb("+ r2 +","+  g2+","+ i2 +")";
+
+    b3.innerText = "\n"+ "\n"+ "fundo:\n #"+ chars[a2] +""+ chars[z2] +""+ chars[c2]+ 
+ ""+ chars[d2]+""+ chars[e2]+""+ chars[f2] + "\nborda: \nrgb("+ r2 +","+  g2+","+ i2 +")";
+    b3.style["box-shadow"] = "20px 20px 40px "+ "rgb("+ r2 +","+  g2+","+ i2 +")";
+    b3.style["text-shadow"] = "20px 20px 40px "+ "rgb("+ r2 +","+  g2+","+ i2 +")";
+ }
+</script>
+
+</body>
+
+</html>
